@@ -1,0 +1,29 @@
+Features interessant:
+
+	Nombre de coin:
+		Kernel de Harris
+		
+	Séquence concave convexe + Ratio au perimetre total:
+		DSS -> Maximal segment covering -> Concave/Convexe
+		
+	Ratio Aire/(Périmêtre^2):
+		Constant rescale + peut-être intéressant
+		
+	Information sur les trous:
+		squelette topo
+		Nombre de trous
+		
+		
+		
+		
+		
+Preprocessing:
+
+	lissage gaussien
+	
+	closing:
+		dilatation + erosion
+		
+	
+		
+	
