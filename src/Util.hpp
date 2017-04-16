@@ -32,5 +32,7 @@ void pm_erreur(const std::string& texte);
 float clampf(float v, float mini, float maxi);
 int clampi(int v, int mini, int maxi);
 
+uint64_t gcd(uint64_t a, uint64_t b);
+
 #endif
 

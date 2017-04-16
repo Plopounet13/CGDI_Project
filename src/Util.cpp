@@ -96,6 +96,11 @@ float clampf(float v, float mini, float maxi){
 	return min(maxi, max(mini, v));
 }
 
+uint64_t gcd(uint64_t a, uint64_t b){
+	return (a ? gcd(b%a, a) : b);
+}
+
+
 
 
 

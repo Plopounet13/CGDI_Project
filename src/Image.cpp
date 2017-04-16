@@ -404,6 +404,9 @@ void Image::threshold(int thresh){
 	
 }
 
+void Image::threshold(){
+	threshold(maxv/2);
+}
 
 //TODO
 void Image::thresholdMinVar(){
@@ -466,7 +469,7 @@ void Image::applyConv(vector<int>& kernel, int n, int m){
 				newbitMap[i+j*width].mr = roundf((float)r / (float)div);
 			}
 		}
-	} else if (mP == 3){
+	} else {
 		for (int j=0; j<height; ++j){
 			for (int i=0; i<width; ++i){
 				int r=0;
@@ -503,13 +506,97 @@ void Image::applyConv(vector<int>& kernel, int n, int m){
 	bitMap.swap(newbitMap);
 }
 
-void Image::smooth(){
-	vector<int> mat(9);
-	mat[0]=1;
-	mat[1]=2;
-	mat[2]=1;
+int binomial(uint64_t n, uint64_t k){
+	uint64_t lim = min(k, n-k);
 	
+	uint64_t seuil = UINT64_MAX / n;
+	
+	uint64_t top = 1;
+	uint64_t bot = 1;
+	
+	
+	for (long i = 0; i < lim; ++i){
+		
+		if (top > seuil){
+			uint64_t div = gcd(top, bot);
+			
+			top /= div;
+			bot /= div;
+		}
+		
+		top *= n-i;
+		bot *= i+1;
+		
+	}
+	
+	return (int)(top/bot);
+}
+
+void Image::gaussianSmooth(int size){
+	vector<int> mat(size);
+	
+	for (int i=0; i<= size/2; ++i){
+		mat[i] = mat[size - i - 1] = binomial(size, i);
+	}
+
 	applyConv(mat, mat);
+}
+
+void Image::dilate(int size){
+	vector<Pixel> newbitMap(width*height);
+	int lim = size/2;
+	
+	for (int j=0; j<height; ++j){
+		for (int i=0; i<width; ++i){
+		
+			uchar maxi = 0;
+			for (int k=-lim; k <= lim; ++k){
+				int nk = clampi(j+k, 0, height-1);
+				for (int l=-lim; l <= lim; ++l){
+					int nl = clampi(i+l, 0, width-1);
+					maxi =  max(getPixel(nl, nk).mr, maxi);
+				}
+			}
+			newbitMap[i+j*width].mr = maxi;
+			
+		}
+	}
+	
+	bitMap.swap(newbitMap);
+}
+
+void Image::erode(int size){
+	vector<Pixel> newbitMap(width*height);
+	int lim = size/2;
+	
+	for (int j=0; j<height; ++j){
+		for (int i=0; i<width; ++i){
+			
+			uchar mini = maxv;
+			bool fini = false;
+			for (int k=-lim; !fini && k <= lim; ++k){
+				int nk = clampi(j+k, 0, height-1);
+				for (int l=-lim; !fini && l <= lim; ++l){
+					int nl = clampi(i+l, 0, width-1);
+					mini =  min(getPixel(nl, nk).mr, mini);
+				}
+			}
+			newbitMap[i+j*width].mr = mini;
+			
+		}
+	}
+	
+	bitMap.swap(newbitMap);
+}
+
+void Image::close(int size){
+	dilate(size);
+	erode(size);
+}
+
+void Image::open(int size){
+	erode(size);
+	dilate(size);
 }
 
 //TODO: CDEGUEU
@@ -565,6 +652,12 @@ void Image::sobelNorm(){
 		}
 	}
 	
+	for (int i=0; i<sob1.size(); ++i){
+		for (int j=0; j<sob2.size(); ++j){
+			kernel[j+i*sob2.size()] = sob2[i] * sob1[j];
+		}
+	}
+	
 	for (int j=0; j<height; ++j){
 		for (int i=0; i<width; ++i){
 			int r=0;
@@ -593,8 +686,19 @@ void Image::sobelNorm(){
 	}
 	
 	for (int i=0; i<bitMap.size(); ++i){
-		bitMap[i] = sqrt(newbitMap2[i] * newbitMap2[i] + newbitMap[i] * newbitMap[i]);
+		//TODO: define color depending on the direction of the norm
+		bitMap[i].mr = sqrt(newbitMap2[i] * newbitMap2[i] + newbitMap[i] * newbitMap[i]);
 	}
+	
+	/*mP = 3;
+	for (int i=0; i<bitMap.size(); ++i){
+		int color = bitMap[i].mr;
+		if (color != 0){
+			bitMap[i].mr = (int)(128*cos(3*color+2)+128);
+			bitMap[i].mg = (int)(128*cos(7*color+5)+128);
+			bitMap[i].mb = (int)(128*cos(13*color+11)+128);
+		}
+	}*/
 	
 }
 

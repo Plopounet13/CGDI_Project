@@ -16,7 +16,7 @@ build/%.o : src/%.cpp
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $(STD) $< -o $@
 
 $(PROG): % : build/%.o $(OBJECTS:%=build/%)
-	$(CC) $(LDFLAGS) $(STD) -o bin/$@ $< $(OBJECTS:%=build/%) -lm
+	$(CC) $(LDFLAGS) $(STD) -o bin/$@ $< $(OBJECTS:%=build/%)
 
 cleanall : clean
 	rm -f $(PROG:%=bin/%)

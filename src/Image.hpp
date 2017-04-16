@@ -59,11 +59,17 @@ public:
 	void equalization();
 	
 	void threshold(int thresh);
+	void threshold();
 	void thresholdMinVar();
 	
 	void applyConv(std::vector<int>& kernel1, std::vector<int>& kernel2);
 	void applyConv(std::vector<int>& kernel, int n, int m);
-	void smooth();
+	void gaussianSmooth(int size = 3);
+	
+	void dilate(int size = 3);
+	void erode(int size = 3);
+	void close(int size = 3);
+	void open(int size = 3);
 	
 	void sobelNorm();
 	

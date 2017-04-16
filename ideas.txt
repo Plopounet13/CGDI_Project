@@ -13,9 +13,11 @@ Features interessant:
 		squelette topo
 		Nombre de trous
 		
-		
-		
-		
+	Fourrier transform:
+		does not fit binary image
+	
+	Hough transform:
+		bah rien
 		
 Preprocessing:
 
@@ -27,3 +29,7 @@ Preprocessing:
 	
 		
 	
+interesting link:
+
+MIT image recognition course:
+https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-913-pattern-recognition-for-machine-vision-fall-2004/lecture-notes/

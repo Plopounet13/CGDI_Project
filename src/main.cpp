@@ -21,17 +21,19 @@ int main(int argc, const char * argv[]) {
 		exit(0);
 	}
 	
-	//Image i("/Users/lois/Documents/M1ENS/CGDI/CGDI/testComp.pgm");
+	//Image i("/Users/lois/Documents/M1ENS/CGDI/lectureDG-master/assignments/ShapeIndexing/database/cup-1.pgm");
 	Image i(argv[1]);
 	
-	//string base("test-smooth");
+	//string base("test-");
 	string base(argv[2]);
 	
-	Image i2;
+	i.print(base+"-pure.pgm", false);
 	
-	i.comp_connexe(i2);
+	i.close(7);
 	
-	i2.print(base+"test_comp.pgm", false);
+	i.sobelNorm();
+	
+	i.print(base+"-sobel.pgm", false);
 	
 	return 0;
 
