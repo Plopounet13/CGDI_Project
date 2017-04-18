@@ -1,11 +1,3 @@
-//
-//  Image.cpp
-//  CGDI
-//
-//  Created by Loïs Paulin on 18/02/2017.
-//  Copyright © 2017 Loïs Paulin. All rights reserved.
-//
-
 #include "Image.hpp"
 #include "Histogramme.hpp"
 

@@ -1,11 +1,3 @@
-//
-//  Pixel.hpp
-//  CGDI
-//
-//  Created by Loïs Paulin on 18/02/2017.
-//  Copyright © 2017 Loïs Paulin. All rights reserved.
-//
-
 #ifndef Pixel_hpp
 #define Pixel_hpp
 
