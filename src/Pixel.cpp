@@ -91,6 +91,10 @@ void Pixel::toColor(const Pixel& p, uchar maxv, uchar maxGray){
 	mb = maxGray * clampf(b+m, 0, 1);
 }
 
+bool Pixel::isBlack() {
+	return (mr == 0 && mg == 0 && mb == 0);
+}
+
 bool Pixel::operator== (const Pixel& p2) const{
 	return (mr == p2.mr && mg == p2.mg && mb == p2.mb);
 }

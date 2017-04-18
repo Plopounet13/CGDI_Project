@@ -702,6 +702,37 @@ void Image::sobelNorm(){
 	
 }
 
+uint32_t Image::area(bool white=true) {
+
+	uint32_t ans(0);
+
+	for(Pixel p : bitMap) {
+		if((!white && p.isBlack) || (white && !p.isBlack)) {
+			++ans;
+		}
+	}
+
+	return ans;
+}
+
+uint32_t Image::perimeter() {
+	// maximal DSS
+}
+
+double Image::area_perimeter_feature() {
+	uint32_t perimeter = perimeter();
+
+	return (area(), perimeter * perimeter);
+}
+
+std::vector<Pixel> Image::fourier_transform() {
+	vector<Pixel> fourier;
+
+	for(Pixel p : bitMap) {
+		
+	}
+}
+
 void Image::printHist(const std::string& s){
 	ofstream out(s);
 	if (out.fail()){

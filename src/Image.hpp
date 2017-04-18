@@ -26,7 +26,7 @@ class Image{
 	int width;
 	int height;
 	Histogramme *hist;
-	
+
 	uchar choixSeuilPbm();
 	void construct(std::istream& in);
 	void inputBitmap(std::istream& in);
@@ -70,6 +70,12 @@ public:
 	void erode(int size = 3);
 	void close(int size = 3);
 	void open(int size = 3);
+
+	uint32_t area(bool white);
+	uint32_t perimeter();
+	double area_perimeter_feature();
+
+	std::vector<Pixel> fourier_transform();
 	
 	void sobelNorm();
 	
