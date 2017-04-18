@@ -1,8 +1,3 @@
-/* Utilitaires de lecture pour les fichiers PBM, PGM, PPM
-**
-** E.B. 12/98
-*/
-
 #include <cstdio>
 #include <cstdlib>
 #include "Util.hpp"

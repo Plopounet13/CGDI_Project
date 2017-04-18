@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  CGDI
-//
-//  Created by Loïs Paulin on 18/02/2017.
-//  Copyright © 2017 Loïs Paulin. All rights reserved.
-//
-
 #include <iostream>
 #include <fstream>
 #include "Image.hpp"

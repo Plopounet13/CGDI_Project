@@ -1,11 +1,3 @@
-//
-//  Histogramme.hpp
-//  CGDI
-//
-//  Created by Loïs Paulin on 03/03/2017.
-//  Copyright © 2017 Loïs Paulin. All rights reserved.
-//
-
 #ifndef Histogramme_hpp
 #define Histogramme_hpp
 

@@ -1,7 +1,3 @@
-/* Utilitaires de lecture pour les fichiers PBM, PGM, PPM
- * E.B.  12/98
- */
-
 #ifndef _Util_h
 #define _Util_h
 

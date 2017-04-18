@@ -1,11 +1,3 @@
-//
-//  Histogramme.cpp
-//  CGDI
-//
-//  Created by Loïs Paulin on 03/03/2017.
-//  Copyright © 2017 Loïs Paulin. All rights reserved.
-//
-
 #include "Histogramme.hpp"
 
 using namespace std;
