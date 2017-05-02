@@ -717,13 +717,7 @@ double Image::area_perimeter_feature() {
 	return (area(), perimeter * perimeter);
 }
 
-std::vector<Pixel> Image::fourier_transform() {
-	vector<Pixel> fourier;
-
-	for(Pixel p : bitMap) {
-		
-	}
-}
+//TODO hough and fourier transforms
 
 void Image::printHist(const std::string& s){
 	ofstream out(s);
@@ -797,8 +791,137 @@ void Image::comp_connexe(Image& im) const{
 			im.getPixel(i, j).mb = (int)(128*cos(13*color+11)+128);
 		}
 	}
-	
-	
+
+}
+
+uint32_t Image::raw_moment(uint32_t p, uint32_t q) {
+
+    uint32_t ans(0);
+    for(uint32_t x = 0; x < width; ++x) {
+        for(uint32_t y = 0; y < height; ++y) {
+            ans += pow(x, p) * pow(y, q) * bitMap[x * width + y].mr;
+        }
+    }
+
+    return ans;
+}
+
+double square(double x) {
+    return x * x;
+}
+
+void Image::compute_moments() {
+    /**
+     * 0, 0
+     * 0, 1
+     * 1, 0
+     * 1, 1
+     * 2, 0
+     * 0, 2
+     * 2, 1
+     * 1, 2
+     * 3, 0
+     * 0, 3
+     */
+
+    uint32_t raw_moments[4][4];
+
+    raw_moments[0][0] = raw_moment(0, 0);
+    raw_moments[0][1] = raw_moment(0, 1);
+    raw_moments[1][0] = raw_moment(1, 0);
+    raw_moments[1][1] = raw_moment(1, 1);
+    raw_moments[2][0] = raw_moment(2, 0);
+    raw_moments[0][2] = raw_moment(0, 2);
+    raw_moments[2][1] = raw_moment(2, 1);
+    raw_moments[1][2] = raw_moment(1, 2);
+    raw_moments[3][0] = raw_moment(3, 0);
+    raw_moments[0][3] = raw_moment(0, 3);
+
+    double centroid_x = raw_moments[1][0] / (double)raw_moments[0][0];
+    double centroid_y = raw_moments[0][1] / (double)raw_moments[0][0];
+
+    double moments[4][4];
+
+    moments[0][0] = raw_moments[0][0];
+    moments[0][1] = 0;
+    moments[1][0] = 0;
+    moments[1][1] = raw_moments[1][1] - centroid_x * raw_moments[0][1];
+    moments[2][0] = raw_moments[2][0] - centroid_x * raw_moments[1][0];
+    moments[0][2] = raw_moments[0][2] - centroid_y * raw_moments[0][1];
+    moments[2][1] = raw_moments[2][1] -
+            2 * centroid_x * raw_moments[1][1] -
+            centroid_y * raw_moments[2][0] +
+            2 * square(centroid_x) * raw_moments[0][1];
+
+    moments[1][2] = raw_moments[1][2] -
+                    2 * centroid_y * raw_moments[1][1] -
+                    centroid_x * raw_moments[0][2] +
+                    2 * square(centroid_y) * raw_moments[1][0];
+    moments[3][0] = raw_moments[3][0] -
+            3 * centroid_x * raw_moments[2][0] +
+            2 * square(centroid_x) * raw_moments[1][0];
+
+    moments[0][3] = raw_moments[0][3] -
+                    3 * centroid_y * raw_moments[0][2] +
+                    2 * square(centroid_y) * raw_moments[0][1];
+
+    for(uint32_t i = 0; i < 4; ++i) {
+        for(uint32_t j = 0; j < 4; ++j) {
+            moments[i][j] /= pow(moments[0][0], 1 + ((i + j) / 2.0));
+        }
+    }
+
+    hu_moments[0] = moments[2][0] + moments[0][2];
+    hu_moments[1] = square(moments[2][0] - moments[0][2]) +
+            4 * square(moments[1][1]);
+
+    hu_moments[2] = square(moments[3][0] - 3 * moments[1][2]) +
+            square(3 * moments[2][1] - moments[0][3]);
+
+    hu_moments[3] = square(moments[3][0] + moments[1][2]) +
+            square(moments[2][1] + moments[0][3]);
+
+    hu_moments[4] =
+            (
+                    (
+                            (moments[3][0] - 3 * moments[1][2]) *
+                            (moments[3][0] + moments[1][2])
+                    ) *
+                            (square(moments[3][0] + moments[1][2])) - 3 *
+                            (square(moments[2][1] + moments[0][3]))) +
+            (
+                    (
+                            (3 * moments[2][1] - moments[0][3]) *
+                            (moments[2][1] + moments[0][3])
+                    ) *
+                            3 * square(moments[3][0] + moments[1][2]) -
+                            square(moments[2][1] + moments[0][3])
+            );
+
+    hu_moments[5] = (moments[2][0] - moments[0][2]) *
+            (       square(moments[3][0] + moments[1][2]) -
+                    square(moments[2][1] + moments[0][3])
+            ) +
+            (4 * moments[1][1]) *
+                    (moments[3][0] + moments[1][2]) *
+                    (moments[2][1] + moments[0][3]);
+
+    hu_moments[6] =
+            (
+                    (
+                            (3 * moments[2][1] - moments[0][3]) *
+                            (moments[3][0] + moments[1][2])
+                    ) *
+                            (square(moments[3][0] + moments[1][2])) - 3 *
+                            (square(moments[2][1] + moments[0][3]))) -
+            (
+                    (
+                            (moments[3][0] - 3 * moments[1][2]) *
+                            (moments[2][1] + moments[0][3])
+                    ) *
+                    3 * square(moments[3][0] + moments[1][2]) -
+                    square(moments[2][1] + moments[0][3])
+            );
 }
 
 

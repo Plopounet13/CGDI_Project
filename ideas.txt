@@ -33,3 +33,5 @@ interesting link:
 
 MIT image recognition course:
 https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-913-pattern-recognition-for-machine-vision-fall-2004/lecture-notes/
+
+https://en.wikipedia.org/wiki/Image_moment#Rotation_invariants

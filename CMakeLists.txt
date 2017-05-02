@@ -15,6 +15,6 @@ set(SOURCE_FILES
         src/Util.hpp
         ideas.txt
         Makefile
-        README.md)
+        README.md src/KNearestNeighbours.cpp src/KNearestNeighbours.h src/ImageClass.cpp src/ImageClass.h)
 
 add_executable(CGDI_Project ${SOURCE_FILES})

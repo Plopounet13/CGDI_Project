@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.o"
   "/home/remi/ENS/CGDI/CGDI_Project/src/Image.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/Image.cpp.o"
+  "/home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
+  "/home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o"
   "/home/remi/ENS/CGDI/CGDI_Project/src/Pixel.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o"
   "/home/remi/ENS/CGDI/CGDI_Project/src/Util.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/Util.cpp.o"
   "/home/remi/ENS/CGDI/CGDI_Project/src/main.cpp" "/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles/CGDI_Project.dir/src/main.cpp.o"

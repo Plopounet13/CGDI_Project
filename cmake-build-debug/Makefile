@@ -177,6 +177,60 @@ src/Image.cpp.s:
 	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/Image.cpp.s
 .PHONY : src/Image.cpp.s
 
+src/ImageClass.o: src/ImageClass.cpp.o
+
+.PHONY : src/ImageClass.o
+
+# target to build an object file
+src/ImageClass.cpp.o:
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o
+.PHONY : src/ImageClass.cpp.o
+
+src/ImageClass.i: src/ImageClass.cpp.i
+
+.PHONY : src/ImageClass.i
+
+# target to preprocess a source file
+src/ImageClass.cpp.i:
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.i
+.PHONY : src/ImageClass.cpp.i
+
+src/ImageClass.s: src/ImageClass.cpp.s
+
+.PHONY : src/ImageClass.s
+
+# target to generate assembly for a file
+src/ImageClass.cpp.s:
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.s
+.PHONY : src/ImageClass.cpp.s
+
+src/KNearestNeighbours.o: src/KNearestNeighbours.cpp.o
+
+.PHONY : src/KNearestNeighbours.o
+
+# target to build an object file
+src/KNearestNeighbours.cpp.o:
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o
+.PHONY : src/KNearestNeighbours.cpp.o
+
+src/KNearestNeighbours.i: src/KNearestNeighbours.cpp.i
+
+.PHONY : src/KNearestNeighbours.i
+
+# target to preprocess a source file
+src/KNearestNeighbours.cpp.i:
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.i
+.PHONY : src/KNearestNeighbours.cpp.i
+
+src/KNearestNeighbours.s: src/KNearestNeighbours.cpp.s
+
+.PHONY : src/KNearestNeighbours.s
+
+# target to generate assembly for a file
+src/KNearestNeighbours.cpp.s:
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.s
+.PHONY : src/KNearestNeighbours.cpp.s
+
 src/Pixel.o: src/Pixel.cpp.o
 
 .PHONY : src/Pixel.o
@@ -273,6 +327,12 @@ help:
 	@echo "... src/Image.o"
 	@echo "... src/Image.i"
 	@echo "... src/Image.s"
+	@echo "... src/ImageClass.o"
+	@echo "... src/ImageClass.i"
+	@echo "... src/ImageClass.s"
+	@echo "... src/KNearestNeighbours.o"
+	@echo "... src/KNearestNeighbours.i"
+	@echo "... src/KNearestNeighbours.s"
 	@echo "... src/Pixel.o"
 	@echo "... src/Pixel.i"
 	@echo "... src/Pixel.s"

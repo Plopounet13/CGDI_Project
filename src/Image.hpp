@@ -22,6 +22,8 @@ class Image{
 	uchar choixSeuilPbm();
 	void construct(std::istream& in);
 	void inputBitmap(std::istream& in);
+
+    double hu_moments[7];
 	
 	
 public:
@@ -68,6 +70,10 @@ public:
 	double area_perimeter_feature();
 
 	std::vector<Pixel> fourier_transform();
+
+    uint32_t raw_moment(uint32_t p, uint32_t q);
+    double normalize(double moment);
+    void compute_moments();
 	
 	void sobelNorm();
 	

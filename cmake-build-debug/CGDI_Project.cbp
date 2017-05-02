@@ -105,6 +105,18 @@
 		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Image.hpp">
 			<Option target="CGDI_Project"/>
 		</Unit>
+		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp">
+			<Option target="CGDI_Project"/>
+		</Unit>
+		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.h">
+			<Option target="CGDI_Project"/>
+		</Unit>
+		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp">
+			<Option target="CGDI_Project"/>
+		</Unit>
+		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.h">
+			<Option target="CGDI_Project"/>
+		</Unit>
 		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Pixel.cpp">
 			<Option target="CGDI_Project"/>
 		</Unit>

@@ -177,13 +177,63 @@ CMakeFiles/CGDI_Project.dir/src/Util.cpp.o.provides: CMakeFiles/CGDI_Project.dir
 CMakeFiles/CGDI_Project.dir/src/Util.cpp.o.provides.build: CMakeFiles/CGDI_Project.dir/src/Util.cpp.o
 
 
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o: CMakeFiles/CGDI_Project.dir/flags.make
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o: ../src/KNearestNeighbours.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o -c /home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp
+
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp > CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.i
+
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp -o CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.s
+
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.requires:
+
+.PHONY : CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.requires
+
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.provides: CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.requires
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.provides.build
+.PHONY : CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.provides
+
+CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.provides.build: CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o
+
+
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o: CMakeFiles/CGDI_Project.dir/flags.make
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o: ../src/ImageClass.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o -c /home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp
+
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp > CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.i
+
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp -o CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.s
+
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.requires:
+
+.PHONY : CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.requires
+
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.provides: CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.requires
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.provides.build
+.PHONY : CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.provides
+
+CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.provides.build: CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o
+
+
 # Object files for target CGDI_Project
 CGDI_Project_OBJECTS = \
 "CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/Image.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/main.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o" \
-"CMakeFiles/CGDI_Project.dir/src/Util.cpp.o"
+"CMakeFiles/CGDI_Project.dir/src/Util.cpp.o" \
+"CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o" \
+"CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
 
 # External object files for target CGDI_Project
 CGDI_Project_EXTERNAL_OBJECTS =
@@ -193,9 +243,11 @@ CGDI_Project: CMakeFiles/CGDI_Project.dir/src/Image.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/main.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/Util.cpp.o
+CGDI_Project: CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o
+CGDI_Project: CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/build.make
 CGDI_Project: CMakeFiles/CGDI_Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CGDI_Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable CGDI_Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CGDI_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +260,8 @@ CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/Image.cpp.
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/main.cpp.o.requires
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o.requires
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/Util.cpp.o.requires
+CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.requires
+CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.requires
 
 .PHONY : CMakeFiles/CGDI_Project.dir/requires
 
