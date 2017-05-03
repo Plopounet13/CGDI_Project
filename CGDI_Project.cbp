@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="CGDI_Project" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/remi/ENS/CGDI/CGDI_Project" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/remi/ENS/CGDI/CGDI_Project" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/remi/ENS/CGDI/CGDI_Project" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="CGDI_Project">
+         <Option output="/home/remi/ENS/CGDI/CGDI_Project/CGDI_Project" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/remi/ENS/CGDI/CGDI_Project" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 CGDI_Project" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="CGDI_Project/fast">
+         <Option output="/home/remi/ENS/CGDI/CGDI_Project/CGDI_Project" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/remi/ENS/CGDI/CGDI_Project" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 CGDI_Project/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/remi/ENS/CGDI/CGDI_Project/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/README.md">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/ideas.txt">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.hpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Image.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Image.hpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.h">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.h">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Pixel.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Pixel.hpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Util.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Util.hpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/main.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

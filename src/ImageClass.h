@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include "Image.hpp"
 
 
 class ImageClass {
@@ -18,8 +19,8 @@ private:
 
 public:
     ImageClass();
+    ImageClass(std::string path, std::string n);
     ImageClass(std::string, std::vector<double>);
-    ImageClass(std::string);
     ~ImageClass();
 
     bool operator ==(const ImageClass &a) const;
@@ -30,6 +31,9 @@ public:
     void setDistance(double d);
     double getDistance();
     std::string getClass();
+
+    friend std::ostream& operator<<(std::ostream&, const ImageClass&);
+    void printStream(std::ostream& out) const;
 };
 
 

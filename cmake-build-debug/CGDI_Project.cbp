@@ -84,9 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/Makefile">
-			<Option target="CGDI_Project"/>
-		</Unit>
 		<Unit filename="/home/remi/ENS/CGDI/CGDI_Project/README.md">
 			<Option target="CGDI_Project"/>
 		</Unit>

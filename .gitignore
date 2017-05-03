@@ -164,3 +164,9 @@ xcuserdata/
 *.xcscmblueprint
 
 bin/
+
+database/
+
+cMakeFiles/
+
+cmake-build-debug/

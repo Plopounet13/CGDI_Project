@@ -699,7 +699,7 @@ uint32_t Image::area(bool white=true) {
 	uint32_t ans(0);
 
 	for(Pixel p : bitMap) {
-		if((!white && p.isBlack) || (white && !p.isBlack)) {
+		if((!white && p.isBlack()) || (white && !p.isBlack())) {
 			++ans;
 		}
 	}
@@ -712,9 +712,9 @@ uint32_t Image::perimeter() {
 }
 
 double Image::area_perimeter_feature() {
-	uint32_t perimeter = perimeter();
+	uint32_t perim = perimeter();
 
-	return (area(), perimeter * perimeter);
+	return (area(), perim * perim);
 }
 
 //TODO hough and fourier transforms
@@ -799,7 +799,7 @@ uint32_t Image::raw_moment(uint32_t p, uint32_t q) {
     uint32_t ans(0);
     for(uint32_t x = 0; x < width; ++x) {
         for(uint32_t y = 0; y < height; ++y) {
-            ans += pow(x, p) * pow(y, q) * bitMap[x * width + y].mr;
+            ans += pow(x, p) * pow(y, q) * bitMap[x * height + y].mr;
         }
     }
 
@@ -823,7 +823,6 @@ void Image::compute_moments() {
      * 3, 0
      * 0, 3
      */
-
     uint32_t raw_moments[4][4];
 
     raw_moments[0][0] = raw_moment(0, 0);
@@ -922,6 +921,10 @@ void Image::compute_moments() {
                     3 * square(moments[3][0] + moments[1][2]) -
                     square(moments[2][1] + moments[0][3])
             );
+}
+
+std::string Image::getPath() {
+    return path;
 }
 
 

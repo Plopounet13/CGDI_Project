@@ -24,7 +24,7 @@ public:
 	Pixel(uchar r, uchar g, uchar b);
 	Pixel(uchar v);
 	void toColor(const Pixel& p, uchar maxv, uchar maxGray);
-	bool isBlack;
+	bool isBlack();
 	
 	bool operator== (const Pixel& p2) const;
 	

@@ -23,10 +23,11 @@ class Image{
 	void construct(std::istream& in);
 	void inputBitmap(std::istream& in);
 
-    double hu_moments[7];
+    std::string path;
 	
 	
 public:
+    double hu_moments[7];
 	std::vector<Pixel> bitMap;
 	const Pixel& getPixel(int i, int j) const;
 	Pixel& getPixel(int i, int j);
@@ -84,6 +85,8 @@ public:
 	void printHist(std::ostream& out);
 	
 	void comp_connexe(Image& i) const;
+
+    std::string getPath();
 };
 
 #endif /* Image_hpp */

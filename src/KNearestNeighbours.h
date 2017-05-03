@@ -18,7 +18,8 @@ public:
 
     void set_k(uint32_t new_k);
     void fit(std::vector<ImageClass>);
-    void predict(ImageClass c);
+    void fit_from_file(std::string);
+    void predict(ImageClass& c);
 
 };
 
