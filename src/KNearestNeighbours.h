@@ -13,7 +13,7 @@ private:
     std::vector<ImageClass> neighbours;
 
 public:
-    KNearestNeighbours();
+    KNearestNeighbours(int k = 3);
     ~KNearestNeighbours();
 
     void set_k(uint32_t new_k);

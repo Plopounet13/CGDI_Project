@@ -709,6 +709,7 @@ uint32_t Image::area(bool white=true) {
 
 uint32_t Image::perimeter() {
 	// maximal DSS
+	return 0;
 }
 
 double Image::area_perimeter_feature() {

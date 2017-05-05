@@ -3,12 +3,14 @@
 //
 
 #include <algorithm>
-#include <map>
+#include <unordered_map>
 #include "KNearestNeighbours.h"
 
 #define NB_FEATURES 7
 
-KNearestNeighbours::KNearestNeighbours() : k(0) {}
+KNearestNeighbours::KNearestNeighbours(int mk){
+	k = mk;
+}
 
 KNearestNeighbours::~KNearestNeighbours() {}
 
@@ -53,7 +55,7 @@ void KNearestNeighbours::predict(ImageClass& c) {
 
     std::sort(neighbours.begin(), neighbours.end());
 
-    std::map<std::string, uint32_t> map;
+    std::unordered_map<std::string, uint32_t> map;
 
     for(ImageClass cl : neighbours) map.insert(std::pair<std::string, uint32_t>(cl.getClass(), 0));
 
@@ -63,12 +65,17 @@ void KNearestNeighbours::predict(ImageClass& c) {
 
     std::vector<std::pair<std::string, uint32_t> > values;
 
-    for(std::pair<std::string, uint32_t > p : map) values.push_back(p);
+	int maxi = -1;
+	const std::string *res = NULL;
+	for(const std::pair<std::string, uint32_t >& p : map){
+    //std::cout << p.first << " " << p.second << std::endl;
+		if (maxi < p.second){
+			maxi = p.second;
+			res = &(p.first);
+		}
+	}
 
-    std::sort(values.rbegin(), values.rend(), compare);
 
-    for(std::pair<std::string, uint32_t> v: values) std::cout << v.first << " " << v.second << std::endl;
-
-    c.setClass(values[0].first);
+    c.setClass(*res);
 
 }
