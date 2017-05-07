@@ -23,11 +23,11 @@ void KNearestNeighbours::set_k(uint32_t new_k) {
     k = new_k;
 }
 
-void KNearestNeighbours::fit(std::vector<ImageClass> imgs) {
+void KNearestNeighbours::fit(std::vector<ImageClass>& imgs) {
     neighbours = imgs;
 }
 
-void KNearestNeighbours::fit_from_file(std::string path) {
+void KNearestNeighbours::fit_from_file(const std::string& path) {
 
     std::ifstream in(path);
     char delim = ',';
@@ -51,13 +51,13 @@ void KNearestNeighbours::fit_from_file(std::string path) {
 
 void KNearestNeighbours::predict(ImageClass& c) {
 
-    for(ImageClass cl : neighbours) cl.setDistance(c.distance(cl));
+    for(ImageClass& cl : neighbours) cl.setDistance(c.distance(cl));
 
     std::sort(neighbours.begin(), neighbours.end());
 
     std::unordered_map<std::string, uint32_t> map;
 
-    for(ImageClass cl : neighbours) map.insert(std::pair<std::string, uint32_t>(cl.getClass(), 0));
+    for(ImageClass& cl : neighbours) map[cl.getClass()] = 0;
 
     for(uint32_t i = 0; i < k && i < neighbours.size(); ++i) {
         ++map[neighbours[i].getClass()];
@@ -65,17 +65,17 @@ void KNearestNeighbours::predict(ImageClass& c) {
 
     std::vector<std::pair<std::string, uint32_t> > values;
 
-	int maxi = -1;
-	const std::string *res = NULL;
+	uint32_t maxi = 0;
+	std::string res;
 	for(const std::pair<std::string, uint32_t >& p : map){
     //std::cout << p.first << " " << p.second << std::endl;
 		if (maxi < p.second){
 			maxi = p.second;
-			res = &(p.first);
+			res = (p.first);
 		}
 	}
 
 
-    c.setClass(*res);
+    c.setClass(res);
 
 }

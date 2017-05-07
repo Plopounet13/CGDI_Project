@@ -17,8 +17,8 @@ public:
     ~KNearestNeighbours();
 
     void set_k(uint32_t new_k);
-    void fit(std::vector<ImageClass>);
-    void fit_from_file(std::string);
+    void fit(std::vector<ImageClass>&);
+    void fit_from_file(const std::string&);
     void predict(ImageClass& c);
 
 };
