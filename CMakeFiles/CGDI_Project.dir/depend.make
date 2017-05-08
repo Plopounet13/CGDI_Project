@@ -7,6 +7,7 @@ CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.o: src/Image.hpp
 CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.o: src/Pixel.hpp
 CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.o: src/Util.hpp
 
+CMakeFiles/CGDI_Project.dir/src/Image.cpp.o: src/DSS.hpp
 CMakeFiles/CGDI_Project.dir/src/Image.cpp.o: src/Histogramme.hpp
 CMakeFiles/CGDI_Project.dir/src/Image.cpp.o: src/Image.cpp
 CMakeFiles/CGDI_Project.dir/src/Image.cpp.o: src/Image.hpp

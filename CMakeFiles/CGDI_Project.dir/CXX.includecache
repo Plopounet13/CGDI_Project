@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/remi/ENS/CGDI/CGDI_Project/src/DSS.hpp
+DGtal/base/Common.h
+-
+DGtal/io/boards/Board2D.h
+-
+DGtal/helpers/StdDefs.h
+-
+
 /home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.cpp
 Histogramme.hpp
 /home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.hpp
@@ -17,6 +25,8 @@ Image.hpp
 /home/remi/ENS/CGDI/CGDI_Project/src/Image.hpp
 
 /home/remi/ENS/CGDI/CGDI_Project/src/Image.cpp
+DSS.hpp
+/home/remi/ENS/CGDI/CGDI_Project/src/DSS.hpp
 Image.hpp
 /home/remi/ENS/CGDI/CGDI_Project/src/Image.hpp
 Histogramme.hpp
@@ -30,6 +40,12 @@ iostream
 fstream
 -
 string
+-
+DGtal/base/Common.h
+-
+DGtal/io/boards/Board2D.h
+-
+DGtal/helpers/StdDefs.h
 -
 Pixel.hpp
 /home/remi/ENS/CGDI/CGDI_Project/src/Pixel.hpp
