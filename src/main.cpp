@@ -104,24 +104,42 @@ void write_classes() {
 
 	ofstream out("classes.csv");
 
-	for(ImageClass img : imgs) out << img << endl;
+	for(ImageClass img : imgs) {
+        img.normalize();
+        out << img << endl;
+    }
 
 	out.close();
 }
 
 int main(int argc, const char * argv[]) {
 
-	ImageClass apple("database/apple-20.pgm", "");
+    uint32_t k = (uint32_t)atoi(argv[1]);
 
-	KNearestNeighbours knn;
+    KNearestNeighbours knn;
 
-	knn.set_k((uint32_t)atoi(argv[1]));
+    knn.set_k(k);
 
-	knn.fit_from_file("classes.csv");
+    knn.fit_from_file("classes.csv");
 
-	knn.predict(apple);
+    uint32_t correct(0);
+    uint32_t incorrect(0);
 
-	cout << apple.getClass() << endl;
+    for(string s : classes) {
+        ImageClass c("database/" + s + "-20.pgm", "");
+
+        knn.predict(c);
+
+        if(c.getClass() == s) {
+            cout << "Correct classification for "+s << endl;
+            ++correct;
+        } else {
+            cout << "Incorrect classification for "+s << endl;
+            ++incorrect;
+        }
+    }
+
+    cout << correct << "/" << (correct + incorrect) << " correct classifications" << endl;
 
 	return 0;
 }

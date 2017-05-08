@@ -31,6 +31,7 @@ public:
     void setDistance(double d);
     double getDistance();
     std::string getClass();
+    void normalize();
 
     friend std::ostream& operator<<(std::ostream&, const ImageClass&);
     void printStream(std::ostream& out) const;

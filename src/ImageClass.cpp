@@ -10,6 +10,8 @@ ImageClass::ImageClass(std::string path, std::string n) : name(n) {
 
     Image img(path);
 
+    img.topbm();
+
     img.compute_moments();
 
     for(uint32_t j = 0; j < 7; ++j) features.push_back(img.hu_moments[j]);
@@ -17,6 +19,7 @@ ImageClass::ImageClass(std::string path, std::string n) : name(n) {
 
 ImageClass::ImageClass(std::string s, std::vector<double> v) : curr_distance(0) {
     name = s;
+
     features = v;
 }
 
@@ -42,11 +45,11 @@ double ImageClass::distance(const ImageClass &a) const {
     double ans(0);
 
     for(uint32_t i = 0; i < features.size(); ++i) {
-        ans += (features[i] - a.features[i]) * (features[i] - a.features[i]);
+        double x = features[i] - a.features[i];
+        ans += (x > 0 ? x : -x);
     }
 
-    std::cout << ans << std::endl;
-    return sqrt(ans);
+    return ans;
 }
 
 void ImageClass::setDistance(double d) {
@@ -70,4 +73,25 @@ void ImageClass::printStream(std::ostream& out) const {
 std::ostream& operator<<(std::ostream& out, const ImageClass& i) {
     i.printStream(out);
     return out;
+}
+
+void ImageClass::normalize() {
+    double sum(0);
+
+    for(double d : features) {
+        sum += d;
+    }
+
+    double mean = sum / features.size();
+    double std(0);
+
+    for(double d : features) {
+        std += ((d - mean) * (d - mean));
+    }
+
+    std /= features.size();
+
+    for(uint32_t i = 0; i < features.size(); ++i) {
+        features[i] = (features[i] - mean) / std;
+    }
 }

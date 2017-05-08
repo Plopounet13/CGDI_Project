@@ -37,6 +37,8 @@ void KNearestNeighbours::fit_from_file(const std::string& path) {
         std::vector<double> features;
         std::getline(in, name, delim);
 
+        if(name == "") return;
+
         for (uint32_t i = 0; i < NB_FEATURES; ++i) {
             std::string feature;
             std::getline(in, feature, delim);
@@ -50,6 +52,8 @@ void KNearestNeighbours::fit_from_file(const std::string& path) {
 }
 
 void KNearestNeighbours::predict(ImageClass& c) {
+
+    c.normalize();
 
     for(ImageClass& cl : neighbours) cl.setDistance(c.distance(cl));
 
@@ -67,15 +71,26 @@ void KNearestNeighbours::predict(ImageClass& c) {
 
 	uint32_t maxi = 0;
 	std::string res;
-	for(const std::pair<std::string, uint32_t >& p : map){
-    //std::cout << p.first << " " << p.second << std::endl;
-		if (maxi < p.second){
+    std::vector<std::pair<std::string, uint32_t >> v;
+
+	for(const std::pair<std::string, uint32_t >& p : map) {
+    if(p.second > 0) std::cout << p.first << " " << p.second << std::endl;
+		if (maxi < p.second) {
+            v.clear();
+            v.push_back(p);
 			maxi = p.second;
 			res = (p.first);
 		}
+        else if(maxi == p.second) {
+            v.push_back(p);
+        }
 	}
 
+#define SEED time(NULL)
+    srand(SEED);
 
-    c.setClass(res);
+    unsigned long idx = rand() % v.size();
+
+    c.setClass(v[idx].first);
 
 }

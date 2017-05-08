@@ -857,6 +857,7 @@ void Image::compute_moments() {
                     2 * centroid_y * raw_moments[1][1] -
                     centroid_x * raw_moments[0][2] +
                     2 * square(centroid_y) * raw_moments[1][0];
+
     moments[3][0] = raw_moments[3][0] -
             3 * centroid_x * raw_moments[2][0] +
             2 * square(centroid_x) * raw_moments[1][0];
@@ -865,13 +866,16 @@ void Image::compute_moments() {
                     3 * centroid_y * raw_moments[0][2] +
                     2 * square(centroid_y) * raw_moments[0][1];
 
+    double mu_0 = moments[0][0];
+
     for(uint32_t i = 0; i < 4; ++i) {
         for(uint32_t j = 0; j < 4; ++j) {
-            moments[i][j] /= pow(moments[0][0], 1 + ((i + j) / 2.0));
+            moments[i][j] /= pow(mu_0, 1 + ((i + j) / 2.0));
         }
     }
 
     hu_moments[0] = moments[2][0] + moments[0][2];
+
     hu_moments[1] = square(moments[2][0] - moments[0][2]) +
             4 * square(moments[1][1]);
 
@@ -894,8 +898,8 @@ void Image::compute_moments() {
                             (3 * moments[2][1] - moments[0][3]) *
                             (moments[2][1] + moments[0][3])
                     ) *
-                            3 * square(moments[3][0] + moments[1][2]) -
-                            square(moments[2][1] + moments[0][3])
+                            (3 * square(moments[3][0] + moments[1][2])) -
+                            (square(moments[2][1] + moments[0][3]))
             );
 
     hu_moments[5] = (moments[2][0] - moments[0][2]) *
@@ -919,7 +923,7 @@ void Image::compute_moments() {
                             (moments[3][0] - 3 * moments[1][2]) *
                             (moments[2][1] + moments[0][3])
                     ) *
-                    3 * square(moments[3][0] + moments[1][2]) -
+                            (3 * square(moments[3][0] + moments[1][2])) -
                     square(moments[2][1] + moments[0][3])
             );
 }
