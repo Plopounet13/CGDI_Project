@@ -62,21 +62,22 @@ Point dir<1>(int d){
 	}
 }
 
-template <bool b> void detectContours(const DigitalSet& formes, vector<Point>& out);
+template <bool b> void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& out);
 
 template <bool b>
-void detectContours(const DigitalSet& formes, vector<Point>& out){
+void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& out){
 	int nbDir = (2 - b)*4, nbDir_2 = nbDir/2;
 	
 	out.clear();
 	if (formes.begin() == formes.end())
 		return;
 	
-	Point p = *formes.begin();
+	auto pi = d.rbegin();
 	
-	//TODO: Change this cause does not work with shapes with holes
-	while (formes(p))
-		p[0] += 1;
+	while (pi != d.rend() && !formes(*pi))
+		++pi;
+	
+	Point p = *pi;
 	
 	p[0] -= 1;
 	out.push_back(p);
@@ -158,3 +159,34 @@ void DSScover(const vector<Point>& input, vector<ArithmeticalDSSComputer< MyCirc
 	}while(tmp.end() != posFin);
 	
 }
+
+
+double DSSperimeter(const Domain& d, const DigitalSet& forme){
+	vector<ArithmeticalDSSComputer< MyCirculator, Integer, 8> > dssCover;
+	vector<Point> contour;
+	
+	detectContours<0>(d, forme, contour);
+	
+	DSScover<8>(contour, dssCover);
+	
+	double perimeter = 0;
+	
+	for (auto& dss : dssCover){
+		perimeter += l2Metric(dss.front(), dss.back());
+	}
+	
+	return perimeter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

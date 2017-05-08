@@ -5,6 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <DGtal/base/Common.h>
+#include <DGtal/io/boards/Board2D.h>
+#include <DGtal/helpers/StdDefs.h>
 #include "Pixel.hpp"
 #include "Util.hpp"
 
@@ -12,6 +15,8 @@ class Histogramme;
 
 //TODO: passer sur des pixels en float
 //TODO: retirer le maintient de l'histogramme
+
+using namespace DGtal::Z2i;
 
 class Image{
 	uchar mP;
@@ -67,7 +72,7 @@ public:
 	void open(int size = 3);
 
 	uint32_t area(bool white);
-	uint32_t perimeter();
+	double perimeter(const DigitalSet& forme);
 	double area_perimeter_feature();
 
 	std::vector<Pixel> fourier_transform();
@@ -85,6 +90,8 @@ public:
 	void printHist(std::ostream& out);
 	
 	void comp_connexe(Image& i) const;
+	
+	void extractForme(DigitalSet& out);
 
     std::string getPath();
 };
