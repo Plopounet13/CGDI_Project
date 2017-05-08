@@ -269,9 +269,6 @@ void Image::print(ostream& out, bool binary){
 }
 
 Histogramme* Image::getHisto(){
-	if (!hist){
-		hist = new Histogramme(*this);
-	}
 	return hist;
 }
 
@@ -287,10 +284,6 @@ void Image::inverse(){
 			p.mr = maxv-p.mr;
 		}
 	}
-	if (!hist){
-		hist = new Histogramme(*this);
-	} else
-		hist->inverse();
 }
 
 void Image::gamma_correction(float gamma){
@@ -313,10 +306,6 @@ void Image::gamma_correction(float gamma){
 		}
 	}
 	
-	if (!hist){
-		hist = new Histogramme(*this);
-	} else
-		hist->apply_trans(conv);
 }
 
 void Image::linear_interpolation(){
@@ -360,10 +349,6 @@ void Image::linear_interpolation(int a, int b){
 		}
 	}
 	
-	if (!hist){
-		hist = new Histogramme(*this);
-	} else
-		hist->apply_trans(conv);
 		
 }
 

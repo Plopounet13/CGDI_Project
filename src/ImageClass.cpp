@@ -11,6 +11,7 @@ ImageClass::ImageClass(std::string path, std::string n) : name(n) {
     Image img(path);
 
     img.topbm();
+	img.inverse();
 
     img.compute_moments();
 

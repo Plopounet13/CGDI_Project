@@ -79,7 +79,6 @@ void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& ou
 	
 	Point p = *pi;
 	
-	p[0] -= 1;
 	out.push_back(p);
 	
 	int dirIni = -1;
