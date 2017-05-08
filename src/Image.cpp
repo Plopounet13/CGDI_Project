@@ -711,7 +711,7 @@ double Image::perimeter(const Domain& d, const DigitalSet& forme){
 }
 
 double Image::area_perimeter_feature() {
-	Domain d(Point(0,0), Point(width, height));
+	Domain d(Point(-1,-1), Point(width+1, height+1));
 	DigitalSet forme(d);
 	extractForme(forme);
 	double perim = perimeter(d, forme);
