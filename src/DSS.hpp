@@ -5,21 +5,18 @@
 #include <DGtal/io/boards/Board2D.h>
 #include <DGtal/helpers/StdDefs.h>
 
-typedef std::vector<Point>::const_iterator Iterator;
-typedef Circulator<Iterator> MyCirculator;
+typedef std::vector<DGtal::Z2i::Point>::const_iterator Iterator;
+typedef DGtal::Circulator<Iterator> MyCirculator;
 
-template <bool b> void detectContours(const DigitalSet& forme, vector<Point>& out);
-
-template <int c>
-void maximalDSS(const vector<Point>& input, vector<ArithmeticalDSSComputer< Iterator, Integer, c> >& output);
+template <bool b> void detectContours(const DGtal::Z2i::DigitalSet& forme, std::vector<DGtal::Z2i::Point>& out);
 
 template <int c>
-void DSScover(const vector<Point>& input, vector<ArithmeticalDSSComputer< MyCirculator, Integer, c> >& output);
+void maximalDSS(const std::vector<DGtal::Z2i::Point>& input, std::vector<DGtal::ArithmeticalDSSComputer< Iterator, DGtal::Z2i::Integer, c> >& output);
 
+template <int c>
+void DSScover(const std::vector<DGtal::Z2i::Point>& input, std::vector<DGtal::ArithmeticalDSSComputer< Iterator, DGtal::Z2i::Integer, c> >& output);
 
-
-
-
+double DSSperimeter(const DGtal::Z2i::DigitalSet& forme);
 
 
 

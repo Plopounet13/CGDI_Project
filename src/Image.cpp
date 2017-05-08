@@ -1,3 +1,4 @@
+#include "DSS.hpp"
 #include "Image.hpp"
 #include "Histogramme.hpp"
 
@@ -403,8 +404,6 @@ void Image::threshold(){
 //TODO
 void Image::thresholdMinVar(){
 	
-	
-	
 }
 
 void Image::applyConv(vector<int>& kernel1, vector<int>& kernel2){
@@ -707,15 +706,17 @@ uint32_t Image::area(bool white=true) {
 	return ans;
 }
 
-uint32_t Image::perimeter() {
-	// maximal DSS
-	return 0;
+double Image::perimeter(const DigitalSet& forme){
+	return DSSperimeter(forme);
 }
 
 double Image::area_perimeter_feature() {
-	uint32_t perim = perimeter();
+	Domain d(Point(0,0), Point(width, height));
+	DigitalSet forme(d);
+	extractForme(forme);
+	double perim = perimeter(forme);
 
-	return (area(), perim * perim);
+	return ((double)forme.size() / perim * perim);
 }
 
 //TODO hough and fourier transforms
@@ -794,6 +795,18 @@ void Image::comp_connexe(Image& im) const{
 	}
 
 }
+
+
+void Image::extractForme(DigitalSet& out){
+	for (int j = 0; j < height; ++j){
+		for (int i = 0; i < width; ++i){
+			if (getPixel(i, j).mr == 1){
+				out.insert(Point(i, j));
+			}
+		}
+	}
+}
+
 
 uint32_t Image::raw_moment(uint32_t p, uint32_t q) {
 
