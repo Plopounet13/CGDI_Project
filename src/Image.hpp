@@ -72,7 +72,7 @@ public:
 	void open(int size = 3);
 
 	uint32_t area(bool white);
-	double perimeter(const DigitalSet& forme);
+	double perimeter(const Domain& d, const DigitalSet& forme);
 	double area_perimeter_feature();
 
 	std::vector<Pixel> fourier_transform();
