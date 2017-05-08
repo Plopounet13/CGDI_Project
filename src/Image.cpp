@@ -706,15 +706,15 @@ uint32_t Image::area(bool white=true) {
 	return ans;
 }
 
-double Image::perimeter(const DigitalSet& forme){
-	return DSSperimeter(forme);
+double Image::perimeter(const Domain& d, const DigitalSet& forme){
+	return DSSperimeter(d, forme);
 }
 
 double Image::area_perimeter_feature() {
 	Domain d(Point(0,0), Point(width, height));
 	DigitalSet forme(d);
 	extractForme(forme);
-	double perim = perimeter(forme);
+	double perim = perimeter(d, forme);
 
 	return ((double)forme.size() / perim * perim);
 }

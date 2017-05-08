@@ -3,10 +3,10 @@ PROG = main
 # Variables pour la compilation des fichiers
 CC        =  clang++
 CFLAGS    =  -g -Wall
-CPPFLAGS  =  -DDEBUG -I$(INCDIR)
+CPPFLAGS  = 
 LDFLAGS   =  -g
 STD = -std=c++11
-FILES = Pixel Image Util Histogramme ImageClass KNearestNeighbours
+FILES = Pixel Image Util Histogramme ImageClass KNearestNeighbours DSS
 OBJECTS = $(FILES:=.o)
 
 
@@ -16,7 +16,7 @@ build/%.o : src/%.cpp
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $(STD) $< -o $@
 
 $(PROG): % : build/%.o $(OBJECTS:%=build/%)
-	$(CC) -L/home/remi/ $(LDFLAGS) $(STD) -o bin/$@ $< $(OBJECTS:%=build/%) -lDGtal
+	$(CC) $(LDFLAGS) $(STD) -o bin/$@ $< $(OBJECTS:%=build/%) -lDGtal
 
 cleanall : clean
 	rm -f $(PROG:%=bin/%)
