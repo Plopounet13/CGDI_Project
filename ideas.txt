@@ -26,7 +26,7 @@ Preprocessing:
 	closing:
 		dilatation + erosion
 		
-	
+	plus proche
 		
 	
 interesting link:

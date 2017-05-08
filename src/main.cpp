@@ -114,8 +114,6 @@ void write_classes() {
 
 int main(int argc, const char * argv[]) {
 
-    write_classes(); return 0;
-
     uint32_t k = (uint32_t)atoi(argv[1]);
 
     KNearestNeighbours knn;

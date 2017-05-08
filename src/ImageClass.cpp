@@ -12,6 +12,8 @@ ImageClass::ImageClass(std::string path, std::string n) : name(n) {
 
     img.topbm();
 
+    //img.close(10);
+
     img.compute_moments();
 
     for(uint32_t j = 0; j < 7; ++j) features.push_back(img.hu_moments[j]);
