@@ -15,6 +15,8 @@ ImageClass::ImageClass(std::string path, std::string n) : name(n) {
     img.compute_moments();
 
     for(uint32_t j = 0; j < 7; ++j) features.push_back(img.hu_moments[j]);
+
+    features.push_back(img.area_perimeter_feature());
 }
 
 ImageClass::ImageClass(std::string s, std::vector<double> v) : curr_distance(0) {

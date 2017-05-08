@@ -6,7 +6,9 @@
 #include <unordered_map>
 #include "KNearestNeighbours.h"
 
-#define NB_FEATURES 7
+#define NB_FEATURES 8
+#define SEED time(NULL)
+
 
 KNearestNeighbours::KNearestNeighbours(int mk){
 	k = mk;
@@ -86,7 +88,6 @@ void KNearestNeighbours::predict(ImageClass& c) {
         }
 	}
 
-#define SEED time(NULL)
     srand(SEED);
 
     unsigned long idx = rand() % v.size();

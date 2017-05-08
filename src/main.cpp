@@ -6,7 +6,7 @@
 #include "ImageClass.h"
 #include "KNearestNeighbours.h"
 
-#define NB_FEATURES 7
+#define NB_FEATURES 8
 
 std::string classes[] =
 		{
@@ -95,7 +95,7 @@ void write_classes() {
 
 	for(std::string name : classes) {
 		for(uint32_t i = 1; i < 20; ++i) {
-			if(i <= 10 || i >= 16) {
+			if(i <= 10 || i >= 16 ) {
 				cout << "database/"+name+"-"+std::to_string(i)+".pgm" << std::endl;
 				imgs.push_back(ImageClass("database/" + name + "-" + std::to_string(i) + ".pgm", name));
 			}
@@ -113,6 +113,8 @@ void write_classes() {
 }
 
 int main(int argc, const char * argv[]) {
+
+    write_classes(); return 0;
 
     uint32_t k = (uint32_t)atoi(argv[1]);
 
