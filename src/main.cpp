@@ -6,7 +6,7 @@
 #include "ImageClass.h"
 #include "KNearestNeighbours.h"
 
-#define NB_FEATURES 7
+#define NB_FEATURES 8
 
 std::string classes[] =
 		{

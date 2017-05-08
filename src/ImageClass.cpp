@@ -18,11 +18,11 @@ ImageClass::ImageClass(std::string path, std::string n) : name(n) {
 
     for(uint32_t j = 0; j < 7; ++j) features.push_back(img.hu_moments[j]);
 
-    //normalize();
+    normalize();
 
-    //img.inverse();
+    img.inverse();
 
-    //features.push_back(img.area_perimeter_feature());
+    features.push_back(img.area_perimeter_feature());
 }
 
 ImageClass::ImageClass(std::string s, std::vector<double> v) : curr_distance(0) {
@@ -85,12 +85,13 @@ std::ostream& operator<<(std::ostream& out, const ImageClass& i) {
 
 void ImageClass::normalize() {
     double sum(0);
+    uint32_t sz = features.size();
 
     for(double d : features) {
         sum += d;
     }
 
-    double mean = sum / features.size();
+    double mean = sum / sz;
     double std(0);
 
     for(double d : features) {
@@ -99,7 +100,7 @@ void ImageClass::normalize() {
 
     std /= features.size();
 
-    for(uint32_t i = 0; i < features.size(); ++i) {
+    for(uint32_t i = 0; i < sz; ++i) {
         features[i] = (features[i] - mean) / std;
     }
 }

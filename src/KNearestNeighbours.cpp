@@ -6,8 +6,7 @@
 #include <unordered_map>
 #include "KNearestNeighbours.h"
 
-#define NB_FEATURES 7
-#define SEED time(NULL)
+#define NB_FEATURES 8
 
 
 KNearestNeighbours::KNearestNeighbours(int mk){
@@ -61,37 +60,32 @@ void KNearestNeighbours::predict(ImageClass& c) {
 
     std::sort(neighbours.begin(), neighbours.end());
 
-    std::unordered_map<std::string, uint32_t> map;
+    std::unordered_map<std::string, std::vector<ImageClass>> map;
 
-    for(ImageClass& cl : neighbours) map[cl.getClass()] = 0;
+    for(ImageClass& cl : neighbours) map[cl.getClass()] = std::vector<ImageClass>();
 
     for(uint32_t i = 0; i < k && i < neighbours.size(); ++i) {
-        ++map[neighbours[i].getClass()];
+        map[neighbours[i].getClass()].push_back(neighbours[i]);
     }
 
-    std::vector<std::pair<std::string, uint32_t> > values;
-
 	uint32_t maxi = 0;
-	std::string res;
-    std::vector<std::pair<std::string, uint32_t >> v;
+    ImageClass res = ImageClass();
+    res.setDistance(DBL_MAX);
 
-	for(const std::pair<std::string, uint32_t >& p : map) {
-    if(p.second > 0) std::cout << p.first << " " << p.second << std::endl;
-		if (maxi < p.second) {
-            v.clear();
-            v.push_back(p);
-			maxi = p.second;
-			res = (p.first);
+	for(const std::pair<std::string, std::vector<ImageClass> >& p : map) {
+
+        if(p.second.size() > 0) std::cout << p.first << " " << p.second.size() << std::endl;
+
+		if (maxi <= p.second.size()) {
+            for(auto& x : p.second) {
+                if(x < res) res = x;
+            }
+
+			maxi = (uint32_t)p.second.size();
 		}
-        else if(maxi == p.second) {
-            v.push_back(p);
-        }
 	}
 
-    srand(SEED);
 
-    unsigned long idx = rand() % v.size();
-
-    c.setClass(v[idx].first);
+    c.setClass(res.getClass());
 
 }
