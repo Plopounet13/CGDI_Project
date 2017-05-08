@@ -5,7 +5,7 @@
       <Option title="CGDI_Project" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\usr\local\lib\DGtal\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Xml\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/remi/ENS/CGDI/CGDI_Project" />
@@ -44,13 +44,27 @@
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add option="-DUNIX" />
+            <Add option="-DWITH_QT5" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_OPENGL_LIB" />
+            <Add option="-DQT_XML_LIB" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtOpenGL" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtXml" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -67,13 +81,27 @@
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add option="-DUNIX" />
+            <Add option="-DWITH_QT5" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_OPENGL_LIB" />
+            <Add option="-DQT_XML_LIB" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtOpenGL" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtXml" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -88,6 +116,12 @@
          <Option target="CGDI_Project"/>
       </Unit>
       <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/ideas.txt">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/DSS.cpp">
+         <Option target="CGDI_Project"/>
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/DSS.hpp">
          <Option target="CGDI_Project"/>
       </Unit>
       <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.cpp">
@@ -131,6 +165,75 @@
       </Unit>
       <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/local/lib/DGtal/DGtalConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\DGtal\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/local/lib/DGtal/DGtalConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\DGtal\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/local/lib/DGtal/DGtalLibraryDepends.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\DGtal\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/local/lib/DGtal/DGtalLibraryDepends-noconfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\DGtal\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/local/lib/DGtal/cpp11_check.cpp">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\DGtal\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Xml\" />
+      </Unit>
+      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Xml/Qt5XmlConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Xml\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>

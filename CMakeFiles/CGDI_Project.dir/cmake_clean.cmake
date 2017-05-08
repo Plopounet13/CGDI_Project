@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CGDI_Project.dir/src/main.cpp.o"
   "CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o"
   "CMakeFiles/CGDI_Project.dir/src/Util.cpp.o"
+  "CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o"
   "CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o"
   "CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
   "CGDI_Project.pdb"

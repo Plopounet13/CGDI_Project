@@ -177,9 +177,33 @@ CMakeFiles/CGDI_Project.dir/src/Util.cpp.o.provides: CMakeFiles/CGDI_Project.dir
 CMakeFiles/CGDI_Project.dir/src/Util.cpp.o.provides.build: CMakeFiles/CGDI_Project.dir/src/Util.cpp.o
 
 
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o: CMakeFiles/CGDI_Project.dir/flags.make
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o: src/DSS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o -c /home/remi/ENS/CGDI/CGDI_Project/src/DSS.cpp
+
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGDI_Project.dir/src/DSS.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/remi/ENS/CGDI/CGDI_Project/src/DSS.cpp > CMakeFiles/CGDI_Project.dir/src/DSS.cpp.i
+
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGDI_Project.dir/src/DSS.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/remi/ENS/CGDI/CGDI_Project/src/DSS.cpp -o CMakeFiles/CGDI_Project.dir/src/DSS.cpp.s
+
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.requires:
+
+.PHONY : CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.requires
+
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.provides: CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.requires
+	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.provides.build
+.PHONY : CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.provides
+
+CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.provides.build: CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o
+
+
 CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o: CMakeFiles/CGDI_Project.dir/flags.make
 CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o: src/KNearestNeighbours.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o -c /home/remi/ENS/CGDI/CGDI_Project/src/KNearestNeighbours.cpp
 
 CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o: CMakeFiles/CGDI_Project.dir/flags.make
 CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o: src/ImageClass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o -c /home/remi/ENS/CGDI/CGDI_Project/src/ImageClass.cpp
 
 CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.i: cmake_force
@@ -232,6 +256,7 @@ CGDI_Project_OBJECTS = \
 "CMakeFiles/CGDI_Project.dir/src/main.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/Util.cpp.o" \
+"CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o" \
 "CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o"
 
@@ -243,11 +268,23 @@ CGDI_Project: CMakeFiles/CGDI_Project.dir/src/Image.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/main.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/Util.cpp.o
+CGDI_Project: CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o
 CGDI_Project: CMakeFiles/CGDI_Project.dir/build.make
+CGDI_Project: /usr/local/lib/libDGtal.so
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libboost_program_options.a
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libz.so
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.5.1
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.5.1
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libQt5Xml.so.5.5.1
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.5.1
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libQGLViewer.so
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libGLU.so
+CGDI_Project: /usr/lib/x86_64-linux-gnu/libGL.so
 CGDI_Project: CMakeFiles/CGDI_Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable CGDI_Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/remi/ENS/CGDI/CGDI_Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable CGDI_Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CGDI_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -260,6 +297,7 @@ CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/Image.cpp.
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/main.cpp.o.requires
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/Pixel.cpp.o.requires
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/Util.cpp.o.requires
+CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/DSS.cpp.o.requires
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/KNearestNeighbours.cpp.o.requires
 CMakeFiles/CGDI_Project.dir/requires: CMakeFiles/CGDI_Project.dir/src/ImageClass.cpp.o.requires
 
