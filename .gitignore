@@ -170,3 +170,9 @@ database/
 cMakeFiles/
 
 cmake-build-debug/
+
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles/*
+
+CGDI_Project

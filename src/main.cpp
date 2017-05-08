@@ -6,7 +6,7 @@
 #include "ImageClass.h"
 #include "KNearestNeighbours.h"
 
-#define NB_FEATURES 8
+#define NB_FEATURES 7
 
 std::string classes[] =
 		{
@@ -113,6 +113,11 @@ void write_classes() {
 }
 
 int main(int argc, const char * argv[]) {
+
+    if(strcmp(argv[1], "db") == 0) {
+        write_classes();
+        return 0;
+    }
 
     uint32_t k = (uint32_t)atoi(argv[1]);
 

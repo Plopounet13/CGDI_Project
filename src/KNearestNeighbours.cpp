@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include "KNearestNeighbours.h"
 
-#define NB_FEATURES 8
+#define NB_FEATURES 7
 #define SEED time(NULL)
 
 
