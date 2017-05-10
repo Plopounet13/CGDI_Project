@@ -161,12 +161,12 @@ void DSScover(const vector<Point>& input, vector<ArithmeticalDSSComputer< MyCirc
 
 
 double DSSperimeter(const Domain& d, const DigitalSet& forme){
-	vector<ArithmeticalDSSComputer< MyCirculator, Integer, 8> > dssCover;
+	vector<ArithmeticalDSSComputer< Iterator, Integer, 8> > dssCover;
 	vector<Point> contour;
 	
 	detectContours<0>(d, forme, contour);
 	
-	DSScover<8>(contour, dssCover);
+	maximalDSS<8>(contour, dssCover);
 	
 	double perimeter = 0;
 	

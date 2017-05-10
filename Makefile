@@ -150,33 +150,6 @@ src/DSS.cpp.s:
 	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/DSS.cpp.s
 .PHONY : src/DSS.cpp.s
 
-src/Histogramme.o: src/Histogramme.cpp.o
-
-.PHONY : src/Histogramme.o
-
-# target to build an object file
-src/Histogramme.cpp.o:
-	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.o
-.PHONY : src/Histogramme.cpp.o
-
-src/Histogramme.i: src/Histogramme.cpp.i
-
-.PHONY : src/Histogramme.i
-
-# target to preprocess a source file
-src/Histogramme.cpp.i:
-	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.i
-.PHONY : src/Histogramme.cpp.i
-
-src/Histogramme.s: src/Histogramme.cpp.s
-
-.PHONY : src/Histogramme.s
-
-# target to generate assembly for a file
-src/Histogramme.cpp.s:
-	$(MAKE) -f CMakeFiles/CGDI_Project.dir/build.make CMakeFiles/CGDI_Project.dir/src/Histogramme.cpp.s
-.PHONY : src/Histogramme.cpp.s
-
 src/Image.o: src/Image.cpp.o
 
 .PHONY : src/Image.o
@@ -351,9 +324,6 @@ help:
 	@echo "... src/DSS.o"
 	@echo "... src/DSS.i"
 	@echo "... src/DSS.s"
-	@echo "... src/Histogramme.o"
-	@echo "... src/Histogramme.i"
-	@echo "... src/Histogramme.s"
 	@echo "... src/Image.o"
 	@echo "... src/Image.i"
 	@echo "... src/Image.s"

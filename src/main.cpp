@@ -2,7 +2,6 @@
 #include <fstream>
 #include <sstream>
 #include "Image.hpp"
-#include "Histogramme.hpp"
 #include "ImageClass.h"
 #include "KNearestNeighbours.h"
 
@@ -90,6 +89,9 @@ void print_moments(Image& img) {
 	cout << endl;
 }
 
+/**
+ * Function used to create 'classes.csv'
+ */
 void write_classes() {
 	std::vector<ImageClass> imgs;
 
@@ -113,8 +115,7 @@ void write_classes() {
 }
 
 int main(int argc, const char * argv[]) {
-
-
+    
     // get input file
     string path(argv[1]);
     uint32_t k = 3;

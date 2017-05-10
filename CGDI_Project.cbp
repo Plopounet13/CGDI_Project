@@ -124,12 +124,6 @@
       <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/DSS.hpp">
          <Option target="CGDI_Project"/>
       </Unit>
-      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.cpp">
-         <Option target="CGDI_Project"/>
-      </Unit>
-      <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Histogramme.hpp">
-         <Option target="CGDI_Project"/>
-      </Unit>
       <Unit filename="/home/remi/ENS/CGDI/CGDI_Project/src/Image.cpp">
          <Option target="CGDI_Project"/>
       </Unit>

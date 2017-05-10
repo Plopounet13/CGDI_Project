@@ -18,8 +18,6 @@ INCLUDE_DIRECTORIES(${DGTAL_INCLUDE_DIRS})
 LINK_DIRECTORIES(${DGTAL_LIBRARY_DIRS})
 
 set(SOURCE_FILES
-        src/Histogramme.cpp
-        src/Histogramme.hpp
         src/Image.cpp
         src/Image.hpp
         src/main.cpp
@@ -29,10 +27,6 @@ set(SOURCE_FILES
         src/Util.hpp
         src/DSS.cpp
         src/DSS.hpp
-        #src/imgRotate.cpp
-        #src/imgScale.cpp
-        ideas.txt
-        README.md
         src/KNearestNeighbours.cpp
         src/KNearestNeighbours.h
         src/ImageClass.cpp

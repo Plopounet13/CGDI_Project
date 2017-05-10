@@ -55,7 +55,7 @@ void ImageClass::setClass(std::string s) {
 
 /**
  *
- * The function used for the distance. Here we use the Euclidian distance
+ * The function used for the distance. Here we use the Manhattan distance
  *
  * @param a The class to compute the distance to
  *
@@ -66,10 +66,10 @@ double ImageClass::distance(const ImageClass &a) const {
 
     for(uint32_t i = 0; i < features.size(); ++i) {
         double x = features[i] - a.features[i];
-        ans += x * x;
+        ans += (x >= 0 ? x : -x);
     }
 
-    return sqrt(ans);
+    return ans;
 }
 
 void ImageClass::setDistance(double d) {
