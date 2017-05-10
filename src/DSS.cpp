@@ -5,14 +5,6 @@ using namespace DGtal;
 using namespace DGtal::Z2i; //We'll only consider Z² digital space on
 //32bit integers
 
-void getCircle(const Point& p, float r, const Domain& d, DigitalSet& res){
-	for (auto& point : d){
-		Point dist = point - p;
-		if (dist[0]*dist[0] + dist[1]*dist[1] < r*r){
-			res.insert(point);
-		}
-	}
-}
 
 int mod(int v, int m){
 	return ((v%m) + m)%m;
@@ -20,6 +12,7 @@ int mod(int v, int m){
 
 template <bool b> Point dir(int d);
 
+//Returns the vector corresponding to the intput direction for 8-connexity
 template <>
 Point dir<0>(int d){
 	switch (d) {
@@ -45,6 +38,7 @@ Point dir<0>(int d){
 	}
 }
 
+//Returns the vector corresponding to the intput direction for 4-connexity
 template <>
 Point dir<1>(int d){
 	switch (d) {
@@ -64,16 +58,19 @@ Point dir<1>(int d){
 
 template <bool b> void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& out);
 
+//Extract contour from the shape described by formes
 template <bool b>
 void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& out){
+	// 4 if b is 1, else 8
 	int nbDir = (2 - b)*4, nbDir_2 = nbDir/2;
 	
 	out.clear();
+	//If shape is empty there is no contour to get
 	if (formes.begin() == formes.end())
 		return;
 	
 	auto pi = d.rbegin();
-	
+	//Iterate from the bottom right corner until finding the shape
 	while (pi != d.rend() && !formes(*pi))
 		++pi;
 	
@@ -83,6 +80,7 @@ void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& ou
 	
 	int dirIni = -1;
 	
+	//Chose initial direction, choice is made so we explore the contour clockwisely
 	for (int i = nbDir - 1; i > 0 ; --i){
 		int v = mod(i, nbDir);
 		
@@ -94,6 +92,7 @@ void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& ou
 		}
 	}
 	
+	//If there is no white pixel around you then you are alone in the shape
 	if (dirIni == -1)
 		return;
 	
@@ -101,6 +100,7 @@ void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& ou
 	int dirAct = dirIni;
 	
 	do{
+		//We choose the most outside pixe in our direction and add it to the contour
 		for (int i = dirAct-(2-b); i < dirAct+(6 - 3*b); ++i){
 			int v = mod(i, nbDir);
 			Point ptmp = pAct + dir<b>(v);
@@ -111,17 +111,18 @@ void detectContours(const Domain& d, const DigitalSet& formes, vector<Point>& ou
 				break;
 			}
 		}
+	//Until we are back at the beginning and going in the same direction (to avoid stopping too soon on 8 shapes)
 	}while(pAct != p || dirAct != dirIni);
 	
 }
 
+//Getting a Cover of the contour with non-overlapping DSSs
 template <int c>
 void maximalDSS(const vector<Point>& input, vector<ArithmeticalDSSComputer< Iterator, Integer, c> >& output){
 	output.clear();
 	
 	output.emplace_back();
 	output.back().init(input.begin());
-	
 	
 	while(output.back().end() != input.end()){
 		while ( (output.back().end() != input.end() ) && ( output.back().extendFront()));
@@ -132,30 +133,6 @@ void maximalDSS(const vector<Point>& input, vector<ArithmeticalDSSComputer< Iter
 			output.push_back(tmp);
 		}
 	}
-	
-}
-
-
-template <int c>
-void DSScover(const vector<Point>& input, vector<ArithmeticalDSSComputer< MyCirculator, Integer, c> >& output){
-	output.clear();
-	
-	MyCirculator it(input.begin(), input.begin(), input.end());
-	
-	ArithmeticalDSSComputer< MyCirculator, Integer, c> tmp;
-	tmp.init(it);
-	while (tmp.extendFront());
-	while (tmp.extendBack());
-	MyCirculator posFin = tmp.end();
-	output.push_back(tmp);
-	
-	do{
-		while  (!tmp.isExtendableFront() && tmp.retractBack());
-		
-		while (tmp.extendFront());
-		
-		output.push_back(tmp);
-	}while(tmp.end() != posFin);
 	
 }
 
