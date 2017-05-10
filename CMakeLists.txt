@@ -13,7 +13,6 @@ if ( Boost_FOUND )
     include_directories( ${Boost_INCLUDE_DIRS} )
 endif( Boost_FOUND )
 
-
 FIND_PACKAGE(DGtal REQUIRED)
 INCLUDE_DIRECTORIES(${DGTAL_INCLUDE_DIRS})
 LINK_DIRECTORIES(${DGTAL_LIBRARY_DIRS})
@@ -30,6 +29,8 @@ set(SOURCE_FILES
         src/Util.hpp
         src/DSS.cpp
         src/DSS.hpp
+        #src/imgRotate.cpp
+        #src/imgScale.cpp
         ideas.txt
         README.md
         src/KNearestNeighbours.cpp

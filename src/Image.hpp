@@ -33,6 +33,7 @@ class Image{
 	
 public:
     double hu_moments[7];
+    std::vector<double> sift;
 	std::vector<Pixel> bitMap;
 	const Pixel& getPixel(int i, int j) const;
 	Pixel& getPixel(int i, int j);
@@ -75,11 +76,9 @@ public:
 	double perimeter(const Domain& d, const DigitalSet& forme);
 	double area_perimeter_feature();
 
-	std::vector<Pixel> fourier_transform();
-
     uint32_t raw_moment(uint32_t p, uint32_t q);
-    double normalize(double moment);
     void compute_moments();
+    void sift_detector();
 	
 	void sobelNorm();
 	

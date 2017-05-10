@@ -94,8 +94,8 @@ void write_classes() {
 	std::vector<ImageClass> imgs;
 
 	for(std::string name : classes) {
-		for(uint32_t i = 1; i < 20; ++i) {
-			if(i <= 10 || i >= 16 ) {
+		for(uint32_t i = 1; i <= 20; ++i) {
+			if(i <= 10 || i >= 16) {
 				cout << "database/"+name+"-"+std::to_string(i)+".pgm" << std::endl;
 				imgs.push_back(ImageClass("database/" + name + "-" + std::to_string(i) + ".pgm", name));
 			}
@@ -114,37 +114,30 @@ void write_classes() {
 
 int main(int argc, const char * argv[]) {
 
-    if(strcmp(argv[1], "db") == 0) {
-        write_classes();
-        return 0;
-    }
-
-    uint32_t k = (uint32_t)atoi(argv[1]);
+    // get input file
+    string path(argv[1]);
+    uint32_t k = 3;
 
     KNearestNeighbours knn;
 
     knn.set_k(k);
 
+    //get learned data
     knn.fit_from_file("classes.csv");
 
-    uint32_t correct(0);
-    uint32_t incorrect(0);
+    ImageClass c(path, "");
 
-    for(string s : classes) {
-        ImageClass c("database/" + s + "-20.pgm", "");
+    std::unordered_map<string, uint32_t > m;
 
-        knn.predict(c);
+    // find all neighbours
+    knn.kNeighbours(c, m);
 
-        if(c.getClass() == s) {
-            cout << "Correct classification for "+s << endl;
-            ++correct;
-        } else {
-            cout << "Incorrect classification for "+s << endl;
-            ++incorrect;
-        }
+    // print confidence
+    for(auto& p : m) {
+        cout << p.second / (double)k << " ";
     }
 
-    cout << correct << "/" << (correct + incorrect) << " correct classifications" << endl;
+    cout << endl;
 
 	return 0;
 }

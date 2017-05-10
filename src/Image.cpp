@@ -9,7 +9,7 @@ Image::Image(){
 	hist = NULL;
 }
 
-Image::Image(const Image& i){
+Image::Image(const Image& i) {
 	bitMap=i.bitMap;
 	mP=i.mP;
 	height=i.height;
@@ -19,11 +19,11 @@ Image::Image(const Image& i){
 }
 
 Pixel& Image::getPixel(int i, int j){
-	return bitMap[i+width*j];
+	return bitMap[i + width * j];
 }
 
 const Pixel& Image::getPixel(int i, int j) const{
-	return bitMap[i+width*j];
+	return bitMap[i + width * j];
 }
 
 void Image::inputBitmap(std::istream& in){
@@ -928,6 +928,10 @@ void Image::compute_moments() {
 
 std::string Image::getPath() {
     return path;
+}
+
+void Image::sift_detector() {
+
 }
 
 

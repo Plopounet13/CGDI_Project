@@ -6,23 +6,27 @@
 
 ImageClass::ImageClass() : curr_distance(0) {}
 
+/**
+ * Principal constructor for ImageClass, it stores the features
+ * and the name of the class
+ * @param path Pathname of the image
+ * @param n The name of the class
+ */
 ImageClass::ImageClass(std::string path, std::string n) : name(n) {
 
     Image img(path);
 
     img.topbm();
 
-    //img.close(10);
-
     img.compute_moments();
 
     for(uint32_t j = 0; j < 7; ++j) features.push_back(img.hu_moments[j]);
 
-    normalize();
-
     img.inverse();
 
     features.push_back(img.area_perimeter_feature());
+
+    normalize();
 }
 
 ImageClass::ImageClass(std::string s, std::vector<double> v) : curr_distance(0) {
@@ -49,15 +53,23 @@ void ImageClass::setClass(std::string s) {
     name = s;
 }
 
+/**
+ *
+ * The function used for the distance. Here we use the Euclidian distance
+ *
+ * @param a The class to compute the distance to
+ *
+ * @return The distance
+ */
 double ImageClass::distance(const ImageClass &a) const {
     double ans(0);
 
     for(uint32_t i = 0; i < features.size(); ++i) {
         double x = features[i] - a.features[i];
-        ans += (x > 0 ? x : -x);
+        ans += x * x;
     }
 
-    return ans;
+    return sqrt(ans);
 }
 
 void ImageClass::setDistance(double d) {
@@ -83,7 +95,12 @@ std::ostream& operator<<(std::ostream& out, const ImageClass& i) {
     return out;
 }
 
-void ImageClass::normalize() {
+/**
+ * This function is not used currently, it is used to standardize the
+ * vector of features by applying x = (x - mean) / std for each x in the
+ * feature vector
+ */
+void ImageClass::standardize() {
     double sum(0);
     uint32_t sz = features.size();
 
@@ -102,5 +119,22 @@ void ImageClass::normalize() {
 
     for(uint32_t i = 0; i < sz; ++i) {
         features[i] = (features[i] - mean) / std;
+    }
+}
+
+/**
+ * A simple vector normalization function
+ */
+void ImageClass::normalize() {
+    double sz(0);
+
+    for(double d : features) {
+        sz += (d * d);
+    }
+
+    sz = sqrt(sz);
+
+    for(uint32_t i = 0; i < features.size(); ++i) {
+        features[i] /= sz;
     }
 }

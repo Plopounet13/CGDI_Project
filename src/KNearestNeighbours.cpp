@@ -15,19 +15,24 @@ KNearestNeighbours::KNearestNeighbours(int mk){
 
 KNearestNeighbours::~KNearestNeighbours() {}
 
-
+/**
+ * Comparison function used for knn
+ */
 bool compare(const std::pair<std::string, uint32_t>& p1, const std::pair<std::string, uint32_t>& p2) {
     return p1.second < p2.second;
 }
 
+/**
+ * @param new_k the k value for knn
+ */
 void KNearestNeighbours::set_k(uint32_t new_k) {
     k = new_k;
 }
 
-void KNearestNeighbours::fit(std::vector<ImageClass>& imgs) {
-    neighbours = imgs;
-}
-
+/**
+ * This function fits the learned data stored at the given path
+ * @param path The path of the .csv file containing the classes
+ */
 void KNearestNeighbours::fit_from_file(const std::string& path) {
 
     std::ifstream in(path);
@@ -52,9 +57,12 @@ void KNearestNeighbours::fit_from_file(const std::string& path) {
     }
 }
 
+/**
+ * Function used to predict the class of the given image
+ * It is a simple KNN algorithm
+ * @param c The ImageClass to predict
+ */
 void KNearestNeighbours::predict(ImageClass& c) {
-
-    c.normalize();
 
     for(ImageClass& cl : neighbours) cl.setDistance(c.distance(cl));
 
@@ -87,5 +95,26 @@ void KNearestNeighbours::predict(ImageClass& c) {
 
 
     c.setClass(res.getClass());
+
+}
+
+/**
+ * This function returns the confidence of image ranking in the database,
+ * it stores in the given the classes and the number of time they appear in
+ * the k nearest neighbours
+ * @param c The class to predict
+ * @param m The map to fill
+ */
+void KNearestNeighbours::kNeighbours(ImageClass& c, std::unordered_map<std::string, uint32_t>& m) {
+
+    for(ImageClass& cl : neighbours) cl.setDistance(c.distance(cl));
+
+    std::sort(neighbours.begin(), neighbours.end());
+
+    for(ImageClass& cl : neighbours) m[cl.getClass()] = 0;
+
+    for(uint32_t i = 0; i < k && i < neighbours.size(); ++i) {
+        ++m[neighbours[i].getClass()];
+    }
 
 }

@@ -20,6 +20,7 @@ public:
     void fit(std::vector<ImageClass>&);
     void fit_from_file(const std::string&);
     void predict(ImageClass& c);
+    void kNeighbours(ImageClass& c, std::unordered_map<std::string, uint32_t>&);
 
 };
 
